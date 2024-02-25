@@ -1,0 +1,236 @@
+header {
+    background-color: #F0F0F0 ;
+    color: #000;
+    padding: 20px;
+    text-align: center;
+    height: 100px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    justify-content: center;
+    align-items: center;
+}
+
+header > img {
+    height: 50px;
+}
+
+#logo {
+    grid-column: 3;
+    justify-self: end;
+}
+
+#logo2 {
+    grid-column: 5;
+    justify-self: start;
+}
+
+main {
+    padding: 20px;
+    min-height: 80vh;
+    text-align: center;
+}
+
+.containier {
+    display: grid;
+    grid-template-rows: 80px auto 60px auto;
+    gap: 10px;
+    align-items: center;
+}
+
+.allExpenseTitle {
+    /* display: flex; */
+    /* justify-content: flex-start; */
+    grid-row: 1;
+    margin: 0;
+    /* margin-left: 20%; */
+}
+
+#addPersonFormInput {
+    display: flex;
+    align-items: center;
+    grid-template-columns: 1fr auto;
+    margin: 10px;
+}
+
+#addPersonName {
+    font-size: 1.2rem;
+}
+#addPersonNameLabel {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+#addPersonFormDiv > button {
+    margin-left: 0.5rem;
+}
+
+.expenseDiv {
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    align-self: start;
+}
+
+.expenseCards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0;
+    width: 30%;
+}
+
+.expenseCards > li {
+    flex: 0 0 calc(50% - 10px);
+    margin: 5px;
+    box-sizing: border-box;
+}
+.expenseCard {
+    border: #ccc 1px solid;
+    border-radius: 10px;
+    padding: 0.5rem;
+
+}
+.invalidInput {
+    border: 1px solid red;
+}
+
+
+.validInput {
+
+}
+.expenseCardTitle {
+    display: grid;
+    grid-template-columns: 1.3fr 1.4fr 0.8fr 0.2fr;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.expenseCardName {
+    justify-self: start;
+    margin-left: 0.2rem;
+}
+
+.expenseCardClose {
+    color:#333;
+    display: grid;
+    justify-content: end;
+}
+
+.expenseCardClose:hover {
+    cursor: pointer;
+}
+
+.round-end {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.expense-detail {
+    margin-bottom: 0.5rem;
+}
+.cbtn {
+    border: #ccc;
+}
+
+.moreExpenseBtn {
+    width: 100%;
+}
+#addPersonForm {
+    padding: 10px;
+    border: 1px solid #ccc;
+    height: 150px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+#add_peron_btn {
+    position: fixed;
+    /* bottom: 100px;
+    right: 100px; */
+    /* border-radius: 120px; */
+    /* height: 120px;
+    width: 120px; */
+    font-size: 1.5rem;
+}
+
+.expenseDetailNameContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+.expenseDetailCheckBox {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+li {
+    list-style: none;
+}
+
+.expenseDetailNameUl {
+    padding: 0.5rem 0.5rem 0 0.5rem;
+}
+
+.expenseDetailNameCard {
+    margin-bottom: 0.5rem;
+}
+
+.main-btn-div {
+    display: flex;
+    justify-content: center;
+}
+
+.main-btn-div-child {
+    display: flex;
+    justify-content: flex-end;
+    width: 60%;
+}
+
+.main-btn {
+    margin: 3px;
+    font-weight: bold;
+}
+
+.conclusionDiv {
+    display: flex;
+    justify-content: center;
+}
+.conclusion {
+    width: 60%;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.conslusion-element {
+    display: flex;
+    align-self: self-start;
+}
+label {
+    margin: 0;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    height: 80px;
+    margin-bottom: 0;
+}
+
+.footerIcon {
+    height: 30px;
+    margin: 2px;
+}
+
+.footerContact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+html {
+    font-size: 14px;
+}
