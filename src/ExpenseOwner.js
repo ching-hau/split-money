@@ -1,9 +1,18 @@
 import { useState } from "react";
+import Alert from "./Alert";
 function ExpenseOwner(props) {
     const [isChecked, setIsChecked] = useState(true);
 
-    const handleIsChecked = () => {
-        setIsChecked(!isChecked);
+    const handleIsChecked = (e) => {
+        let count = 0;
+        e.target.parentNode.parentNode.querySelectorAll(".expenseDetailCheckBox").forEach((inputBox) => {
+            console.log(inputBox.parentNode.querySelector(".expenseDetailCheckBox").checked);
+            if(inputBox.checked) count++;
+        });
+        // console.log(count);
+        if(count >= 1) {
+            setIsChecked(!isChecked);
+        }
     }
     return (
         <>
