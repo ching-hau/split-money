@@ -51,7 +51,6 @@ const calculateBalance = (balance, nameObj) => {
     const negativeValues = [];
     const conclusionText = [];
     balance.forEach((value, index) => {
-        console.log(value, index);
         if(value > 0) {
             positiveIndex[Object.keys(positiveIndex).length] = index;
             positiveValues.push(value);
@@ -77,6 +76,7 @@ const calculateBalance = (balance, nameObj) => {
                         conclusionText.push(indexToName[negativeIndex[i]] + " should give " + indexToName[positiveIndex[index]] + " $" + value.toFixed(2) + ".");
                     }
                     negativeValues[i] += value;
+                    value = 0;
                     if(negativeValues[i] === 0) negativePos = i + 1;
                 }
             }
@@ -118,9 +118,6 @@ function Main() {
         const personalOutcomes = getPersonalOutcome();
         const personalBalance = [];
         for(let i = 0; i < personalExpenses.length; i ++) personalBalance.push(personalOutcomes[i] - personalExpenses[i]);
-        console.log("Expenses", personalExpenses);
-        console.log("Outcomes", personalOutcomes);
-        console.log("Balance", personalBalance);
         let conclusionText = calculateBalance(personalBalance, nameObj);
         conclusionText = conclusionText.length > 0 ? conclusionText : ["No transaction needed."]
         setConclusion(conclusionText);
