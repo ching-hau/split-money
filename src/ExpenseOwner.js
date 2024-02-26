@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Alert from "./Alert";
 function ExpenseOwner(props) {
     const [isChecked, setIsChecked] = useState(true);
 
