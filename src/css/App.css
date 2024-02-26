@@ -10,6 +10,8 @@ header {
     align-items: center;
 }
 
+
+
 header > img {
     height: 50px;
 }
@@ -23,13 +25,31 @@ header > img {
     grid-column: 5;
     justify-self: start;
 }
-
-main {
-    padding: 20px;
-    min-height: 80vh;
-    text-align: center;
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
+html {
+    font-size: 14px;
+    height: 100%
+}
+main {
+    padding: 20px;
+    /* min-height: 80vh; */
+    text-align: center;
+    flex-grow: 1;
+}
+
+footer {
+    background-color: #F0F0F0;
+    color: #000;
+    padding: 20px;
+    text-align: center;
+    height: 80px;
+    margin-bottom: 0;
+}
 .containier {
     display: grid;
     grid-template-rows: 80px auto 60px auto;
@@ -210,14 +230,7 @@ li {
 label {
     margin: 0;
 }
-footer {
-    background-color: #F0F0F0;
-    color: #000;
-    padding: 20px;
-    text-align: center;
-    height: 80px;
-    margin-bottom: 0;
-}
+
 
 .footerIcon {
     height: 30px;
@@ -231,6 +244,3 @@ footer {
 }
 
 
-html {
-    font-size: 14px;
-}

@@ -8,11 +8,11 @@ function ExpenseOwner(props) {
             console.log(inputBox.parentNode.querySelector(".expenseDetailCheckBox").checked);
             if(inputBox.checked) count++;
         });
-        // console.log(count);
         if(count >= 1) {
             setIsChecked(!isChecked);
         }
     }
+
     return (
         <>
             <input type="checkbox" className="form-control expenseDetailCheckBox" checked={isChecked} onChange={handleIsChecked}/>

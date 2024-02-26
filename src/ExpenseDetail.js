@@ -39,10 +39,14 @@ function ExpenseDetail(props) {
     const handleEdit = (e) => {
         setIsOpen(!isOpen);
     }
-    const handleBlur = (e) => {setIsValid(e.target.value.trim() !== "");};
 
-    const handleKeyPress = (e) => {if(e.key === "-") e.preventDefault();}
+    const handleBlur = (e) => {
+        setIsValid(e.target.value.trim() !== "");
+    };
 
+    const handleKeyPress = (e) => {
+        if(e.key === "-") e.preventDefault();
+    }
 
     useEffect(() => {
         const newNameList = [];

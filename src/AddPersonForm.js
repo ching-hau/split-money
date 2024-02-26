@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
-import { createRoot } from 'react-dom/client';
+import React, { useContext, useState } from "react";
 import ExpenseCard from "./ExpenseCard";
 import { CountContext } from "./Context/CountContext";
 
@@ -10,34 +9,49 @@ function AddPersonForm(props) {
     const handleNewPerson = (e) => {
         e.preventDefault();
         const nameSet = new Set();
-        personBlocks.forEach((personBlock) => {nameSet.add(personBlock.key.trim().toLowerCase())});
+
+        personBlocks.forEach((personBlock) => {
+            nameSet.add(personBlock.key.trim().toLowerCase())
+        });
+
         if(nameSet.has(props.inputValue.trim().toLowerCase())) {
             setErrorMsg(props.inputValue + " has already been in the list.");
             return;
         }
+
         if(props.inputValue.trim().toLowerCase().length === 0) {
             setErrorMsg("New name should not be empty, or you can cancel.");
             return;
         }
+
         props.setFormVisible(false);
-        handlePersonBlock(<li key={props.inputValue}><ExpenseCard name={props.inputValue} handleSetCountAdd={handleSetCountAdd}/></li>);
+
+        handlePersonBlock(
+            <li key={props.inputValue}>
+                <ExpenseCard name={props.inputValue} handleSetCountAdd={handleSetCountAdd}/>
+            </li>
+        );
+
         handleSetCountAdd(true);
         props.setInputValue("");
     };
-    const handleInputValue = (e) => {props.setInputValue(e.target.value)};
+
+    const handleInputValue = (e) => {
+        props.setInputValue(e.target.value)
+    };
 
     const handleCancelAddPerson = () => {
         props.setFormVisible(false);
         props.setInputValue("");
         setErrorMsg("");
     }
+
     const handleKeyPress = (e) => {
         setErrorMsg("");
         if(e.key === "Enter") {
             e.preventDefault();
         }
     }
-
 
     return (
         <div id="addPersonForm">

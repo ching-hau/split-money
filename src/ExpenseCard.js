@@ -1,15 +1,14 @@
-import { useState, useRef, useContext, useEffect } from "react";
+import { useState, useRef, useContext } from "react";
 import ExpenseDetail from "./ExpenseDetail";
-import { createRoot } from 'react-dom/client';
 import { CountContext } from "./Context/CountContext";
 
 function ExpenseCard(props) {
     const [outcome, setOutcome] = useState(0);
     const [expensesDetails, setExpensesDetails] = useState([]);
-    // const { handleSetCountAdd, nameList, handleSetNameList } = useContext(CountContext);
     const { handleSetCountAdd, personBlocks, handlePersonBlock, handleRemovePersonBlock } = useContext(CountContext);
 
     const ref = useRef(null);
+
     const handleSetOutcome = (value) => {
         setOutcome(value);
     }
@@ -17,6 +16,7 @@ function ExpenseCard(props) {
     const handleExpensesDetails = (curDetail) => {
         setExpensesDetails(prevDetails => [...prevDetails, curDetail]);
     };
+
     const addMoreExpense = (e) => {
         const parentNode = e.target.parentNode;
         let flag = true;
@@ -37,6 +37,7 @@ function ExpenseCard(props) {
         handleRemovePersonBlock(newBlocks);
         props.handleSetCountAdd(false);
     };
+
     return (
         <div className="expenseCard" ref={ref}>
             <div className="expenseCardTitle">

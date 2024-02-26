@@ -43,6 +43,10 @@ const getPersonalOutcome = () => {
 
 }
 
+const getObjectLength = (obj) => {
+    return Object.keys(obj).length;
+}
+
 const calculateBalance = (balance, nameObj) => {
     const indexToName = getIndexToName();
     const positiveIndex = {};
@@ -52,11 +56,11 @@ const calculateBalance = (balance, nameObj) => {
     const conclusionText = [];
     balance.forEach((value, index) => {
         if(value > 0) {
-            positiveIndex[Object.keys(positiveIndex).length] = index;
+            positiveIndex[getObjectLength(positiveIndex)] = index;
             positiveValues.push(value);
         }
         else if(value < 0) {
-            negativeIndex[Object.keys(negativeIndex).length] = index;
+            negativeIndex[getObjectLength(negativeIndex)] = index;
             negativeValues.push(value);
         }
     });
